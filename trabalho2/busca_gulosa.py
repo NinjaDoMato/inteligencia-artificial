@@ -3,11 +3,12 @@ from pprint import pprint
 from typing import List
 
 from problema import Problema
+from labirinto import Labirinto
 
 
 class BuscaGulosa(object):
 
-    def busca_gulosa(self, problema: Problema):
+    def busca_gulosa(self, problema: Labirinto):
         """Agente que implementa a busca em gulosa:
 
             :param problema: definicao do problema
@@ -37,11 +38,18 @@ class BuscaGulosa(object):
             # 5. Geracao dos estados sucessores
             sucessores = problema.funcao_sucessora(atual)
 
+            aux = atual.copy()
+
             # Escolhe o melhor estado dos estados sucessores gerados
-            # se não encontrar um sucessor melhor, volta para o estado pai
             for sucessor in sucessores:
-                if sucessor > atual:
+                if sucessor > atual and not visitados.__contains__(sucessor):
                     atual = sucessor.copy()
+
+            visitados.append(atual)
+
+            # Se não encontrou um sucessor melhor, volta para o estado pai
+            if atual == aux:
+                atual = atual.pai
 
             # print('-'*80)
             print('sucessor:')

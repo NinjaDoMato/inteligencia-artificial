@@ -36,6 +36,10 @@ class Labirinto(Problema):
             estado.coluna = self.coluna#.copy()
             estado.bloco = self.coluna#.copy()
             estado.labirinto = self.labirinto
+            estado.acao = self.acao
+
+            if self.pai is not None:
+                estado.pai = self.pai.copy()
 
             return estado
 
@@ -46,7 +50,8 @@ class Labirinto(Problema):
             return self.linha == other.linha and self.coluna == other.coluna
 
         def __gt__(self, other):
-            return (self.linha > other.linha or self.coluna > other.coluna)
+            return (self.linha > other.linha) or \
+                   (self.coluna > other.coluna)
 
     @property
     def estado_inicial(self):
