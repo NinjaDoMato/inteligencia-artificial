@@ -4,7 +4,24 @@ import pandas as pd
 import numpy as np
 from problema import Problema
 
-# Constantes para o problema dos missionarios e canibais
+# Constantes para a resolução do labirinto
+
+arquivo = 'maze01.txt'
+
+labirinto = carrega_labirinto(arquivo)
+
+
+def carrega_labirinto(self, arquivo):
+    # Carrega o arquivo com o labirinto
+
+    file = open(arquivo, 'r')
+    labirinto = file.readlines()
+    file.close()
+
+    print(labirinto)
+
+    return labirinto
+
 
 class Labirinto(Problema):
 
@@ -47,24 +64,127 @@ class Labirinto(Problema):
         estado.coluna = 0
         estado.bloco = 'E'
 
+        return estado
+
+    def solucao(self, estado):
+        """Gera uma lista com a solucao de um problema a partir de um estado."""
+
+        # Percorre toda a lista de estados ate o estado inicial
+        solucao_final = []
+
+        while estado.pai is not None:
+            solucao_final.append(estado)
+            estado = estado.pai
+
+        # Inclui o estado inicial na lista
+        solucao_final.append(estado)
+
+        # Retorna a solucao
+        return solucao_final.reverse()
 
 
+    def funcao_objetivo(self, estado):
+        """Verifica se a funcao atingiu o seu objetivo."""
 
+        # Chegou na saída do labirinto (S)
+        return estado.bloco == 'S'
 
+    def __valida_restricoes(self, estado):
+        # Verifica se atingiu uma parede
+        # Se o bloco atual for diferente de ' ', 'E' ou 'S', então é uma parede
+        if estado.bloco == ' ' or estado.bloco == 'E' or estado.bloco == 'S':
+            return estado
+        else:
+            return None
 
+    def __go_left(self, estado_pai, labirinto, acao):
+        '''Move o agente para a esquerda'''
 
+        estado = estado_pai.copy()
 
+        # Salva a ação realizada
+        estado.acao = acao
 
-'''
-arquivo = 'maze01.txt'
+        estado.linha = estado_pai.linha - 1
+        estado.coluna = estado_pai.coluna
+        estado.bloco = labirinto[estado.linha][estado.coluna]
 
-    # Lê a porra do arquivo
-    file = open(arquivo, 'r')
+        estado.pai = estado_pai
 
-    conteudo = file.readlines()
+        # Verifica se o estado é valido
+        return self.__valida_restricoes(estado)
 
-    file.close()
+    def __go_right(self, estado_pai, labirinto, acao):
+        '''Move o agente para a direita'''
 
-    print(conteudo[1][0])
+        estado = estado_pai.copy()
 
-'''
+        # Salva a ação realizada
+        estado.acao = acao
+
+        estado.linha = estado_pai.linha + 1
+        estado.coluna = estado_pai.coluna
+        estado.bloco = labirinto[estado.linha][estado.coluna]
+
+        estado.pai = estado_pai
+
+        # Verifica se o estado é valido
+        return self.__valida_restricoes(estado)
+
+    def __go_up(self, estado_pai, labirinto, acao):
+        '''Move o agente para a cima'''
+
+        estado = estado_pai.copy()
+
+        # Salva a ação realizada
+        estado.acao = acao
+
+        estado.linha = estado_pai.linha
+        estado.coluna = estado_pai.coluna - 1
+        estado.bloco = labirinto[estado.linha][estado.coluna]
+
+        estado.pai = estado_pai
+
+        # Verifica se o estado é valido
+        return self.__valida_restricoes(estado)
+
+    def __go_down(self, estado_pai, labirinto, acao):
+        '''Move o agente para a baixo'''
+
+        estado = estado_pai.copy()
+
+        # Salva a ação realizada
+        estado.acao = acao
+
+        estado.linha = estado_pai.linha
+        estado.coluna = estado_pai.coluna + 1
+        estado.bloco = labirinto[estado.linha][estado.coluna]
+
+        estado.pai = estado_pai
+
+        # Verifica se o estado é valido
+        return self.__valida_restricoes(estado)
+
+    def funcao_sucessora(self, estado):
+        """Gera os estados sucessores a partir de um estado."""
+
+        # Ações possiveis:
+        # - Mover agente para esquerda
+        # - Mover agente para direita
+        # - Mover agente para cima
+        # - Mover agente para baixo
+
+        sucessores = []
+
+        a1 = self.__go_left(estado, labirinto, 'LEFT')
+        a2 = self.__go_left(estado, labirinto, 'LEFT')
+        a3 = self.__go_left(estado, labirinto, 'LEFT')
+        a4 = self.__go_left(estado, labirinto, 'LEFT')
+
+        # Cria uma lista apenas com os estados validos
+        if a1: sucessores.append(a1)
+        if a2: sucessores.append(a2)
+        if a3: sucessores.append(a3)
+        if a4: sucessores.append(a4)
+
+        return sucessores
