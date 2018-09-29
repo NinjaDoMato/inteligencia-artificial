@@ -1,26 +1,9 @@
 #!/usr/bin/env python
-
-import pandas as pd
-import numpy as np
 from problema import Problema
 
 # Constantes para a resolução do labirinto
 
 arquivo = 'maze01.txt'
-
-labirinto = carrega_labirinto(arquivo)
-
-
-def carrega_labirinto(self, arquivo):
-    # Carrega o arquivo com o labirinto
-
-    file = open(arquivo, 'r')
-    labirinto = file.readlines()
-    file.close()
-
-    print(labirinto)
-
-    return labirinto
 
 
 class Labirinto(Problema):
@@ -31,9 +14,16 @@ class Labirinto(Problema):
         """Modelagem de um estado do problema."""
 
         def __init__(self):
+            file = open('maze01.txt', 'r')
+            labirinto = file.readlines()
+            file.close()
+
+            print(labirinto)
+
             self.linha = 0
             self.coluna = 0
             self.bloco = ''
+            self.labirinto = labirinto
 
             # Referencia para o estado pai. Usado para descobrir qual eh
             # a solucao do problema
@@ -43,14 +33,16 @@ class Labirinto(Problema):
 
         def copy(self):
             estado = Labirinto.Estado()
-            estado.linha = self.lina.copy()
-            estado.coluna = self.coluna.copy()
-            estado.bloco = self.coluna.copy()
+            estado.linha = self.linha # .copy()
+            estado.coluna = self.coluna # .copy()
+            estado.bloco = self.coluna # .copy()
+            estado.labirinto = self.labirinto
 
             return estado
 
         def __repr__(self):
-            return f'[{self.linha}][{self.coluna}] | {self.bloco}'
+            #self.labirinto[self.linha][self.coluna] = 'X'
+            return f'{self.labirinto}'
 
         def __eq__(self, other):
             return self.linha == other.linha and self.coluna == other.coluna
@@ -62,7 +54,7 @@ class Labirinto(Problema):
         estado = Labirinto.Estado()
         estado.linha = 1
         estado.coluna = 0
-        estado.bloco = 'E'
+        estado.bloco = estado.labirinto[estado.linha][estado.coluna]
 
         return estado
 
@@ -107,7 +99,7 @@ class Labirinto(Problema):
 
         estado.linha = estado_pai.linha - 1
         estado.coluna = estado_pai.coluna
-        estado.bloco = labirinto[estado.linha][estado.coluna]
+        estado.bloco = estado.labirinto[estado.linha][estado.coluna]
 
         estado.pai = estado_pai
 
@@ -176,10 +168,10 @@ class Labirinto(Problema):
 
         sucessores = []
 
-        a1 = self.__go_left(estado, labirinto, 'LEFT')
-        a2 = self.__go_left(estado, labirinto, 'LEFT')
-        a3 = self.__go_left(estado, labirinto, 'LEFT')
-        a4 = self.__go_left(estado, labirinto, 'LEFT')
+        a1 = self.__go_left(estado, estado.labirinto, 'LEFT')
+        a2 = self.__go_left(estado, estado.labirinto, 'LEFT')
+        a3 = self.__go_left(estado, estado.labirinto, 'LEFT')
+        a4 = self.__go_left(estado, estado.labirinto, 'LEFT')
 
         # Cria uma lista apenas com os estados validos
         if a1: sucessores.append(a1)
