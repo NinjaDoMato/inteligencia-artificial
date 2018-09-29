@@ -15,7 +15,7 @@ class Labirinto(Problema):
         """Modelagem de um estado do problema."""
 
         def __init__(self):
-            file = open('maze01.txt', 'r')
+            file = open(arquivo, 'r')
             labirinto = file.readlines()
             file.close()
 
@@ -40,13 +40,13 @@ class Labirinto(Problema):
             return estado
 
         def __repr__(self):
-            #teste = pd.DataFrame(self.labirinto)
-            #return f'{teste}'
-
-            return f'[{self.linha}][{self.coluna}] - {self.bloco}'
+            return f'[{self.linha}][{self.coluna}] - {self.acao}'
 
         def __eq__(self, other):
             return self.linha == other.linha and self.coluna == other.coluna
+
+        def __gt__(self, other):
+            return (self.linha > other.linha or self.coluna > other.coluna)
 
     @property
     def estado_inicial(self):
@@ -98,8 +98,8 @@ class Labirinto(Problema):
         # Salva a ação realizada
         estado.acao = acao
 
-        estado.linha = estado_pai.linha - 1
-        estado.coluna = estado_pai.coluna
+        estado.linha = estado_pai.linha
+        estado.coluna = estado_pai.coluna - 1
         estado.bloco = estado.labirinto[estado.linha][estado.coluna]
 
         estado.pai = estado_pai
@@ -115,8 +115,8 @@ class Labirinto(Problema):
         # Salva a ação realizada
         estado.acao = acao
 
-        estado.linha = estado_pai.linha + 1
-        estado.coluna = estado_pai.coluna
+        estado.linha = estado_pai.linha
+        estado.coluna = estado_pai.coluna + 1
         estado.bloco = labirinto[estado.linha][estado.coluna]
 
         estado.pai = estado_pai
@@ -132,8 +132,8 @@ class Labirinto(Problema):
         # Salva a ação realizada
         estado.acao = acao
 
-        estado.linha = estado_pai.linha
-        estado.coluna = estado_pai.coluna - 1
+        estado.linha = estado_pai.linha - 1
+        estado.coluna = estado_pai.coluna
         estado.bloco = labirinto[estado.linha][estado.coluna]
 
         estado.pai = estado_pai
@@ -149,8 +149,8 @@ class Labirinto(Problema):
         # Salva a ação realizada
         estado.acao = acao
 
-        estado.linha = estado_pai.linha
-        estado.coluna = estado_pai.coluna + 1
+        estado.linha = estado_pai.linha + 1
+        estado.coluna = estado_pai.coluna
         estado.bloco = labirinto[estado.linha][estado.coluna]
 
         estado.pai = estado_pai
@@ -162,17 +162,17 @@ class Labirinto(Problema):
         """Gera os estados sucessores a partir de um estado."""
 
         # Ações possiveis:
-        # - Mover agente para esquerda
-        # - Mover agente para direita
-        # - Mover agente para cima
-        # - Mover agente para baixo
+        # - Ir para esquerda
+        # - Ir para direita
+        # - Ir para cima
+        # - Ir para baixo
 
         sucessores = []
 
         a1 = self.__go_left(estado, estado.labirinto, 'LEFT')
-        a2 = self.__go_right(estado, estado.labirinto, 'LEFT')
-        a3 = self.__go_up(estado, estado.labirinto, 'LEFT')
-        a4 = self.__go_down(estado, estado.labirinto, 'LEFT')
+        a2 = self.__go_right(estado, estado.labirinto, 'RIGHT')
+        a3 = self.__go_up(estado, estado.labirinto, 'UP')
+        a4 = self.__go_down(estado, estado.labirinto, 'DOWN')
 
         # Cria uma lista apenas com os estados validos
         if a1: sucessores.append(a1)

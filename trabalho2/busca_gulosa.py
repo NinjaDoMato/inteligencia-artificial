@@ -4,69 +4,51 @@ from typing import List
 
 from problema import Problema
 
+
 class BuscaGulosa(object):
 
-    # TODO: adaptar busca em largura do professor para busca gulosa e A*
     def busca_gulosa(self, problema: Problema):
         """Agente que implementa a busca em gulosa:
 
-        :param problema: definicao do problema
-        :return: lista com os estados para chegar na solucao do problema
+            :param problema: definicao do problema
+            :return: lista com os estados para chegar na solucao do problema
 
         """
 
-        # 1. Adiciona o estado inicial na lista de borda
-        borda = [problema.estado_inicial]
+        # Calcula distancia estimada do estado inicial até o estado final
+        # Busca estados sucessores
+        # Escolhe o melhor estado sucessor
 
-        # Cria uma lista com a memoria dos estados ja visitados
-        memoria = [problema.estado_inicial]
+        atual = problema.estado_inicial
+
+        visitados = [problema.estado_inicial]
 
         while True:
 
-            # 2. Verifica se houve falha
-            if not borda:
-                print('Falha ao encontrar solucao')
-                return []
-
-            # 3. Recupera o proximo estado
-            estado = borda.pop(0)
-            print(f'='*80)
+            print(f'=' * 80)
             print(f'> Estado sendo avaliado:')
-            print(f'{estado}')
+            print(f'{atual}')
 
             # 4. Verifica se achou a solucao objetivo
-            if problema.funcao_objetivo(estado):
+            if problema.funcao_objetivo(atual):
                 print('Solucao encontrada.')
-                return problema.solucao(estado)
+                return problema.solucao(atual)
 
             # 5. Geracao dos estados sucessores
-            # ** Na busca em largura, os estados sucessores sao adicionados
-            # ** ao final da lista
+            sucessores = problema.funcao_sucessora(atual)
 
-            sucessores = problema.funcao_sucessora(estado)
-            borda.extend([x for x in sucessores if x not in memoria])
-
-            memoria.extend([x for x in sucessores if x not in memoria])
+            # Escolhe o melhor estado dos estados sucessores gerados
+            # se não encontrar um sucessor melhor, volta para o estado pai
+            for sucessor in sucessores:
+                if sucessor > atual:
+                    atual = sucessor.copy()
 
             # print('-'*80)
-            print('sucessores:')
+            print('sucessor:')
 
             for x in sucessores:
                 print(x)
-            #
-            #print('*-*'*80)
-            #print('memoria:')
-            #for x in memoria:
-            #    print(x)
-            #print()
 
-            # print('-' * 80)
-            # print('borda DEPOIS:')
-            # for x in borda:
-            #     print(x)
-            # print()
-
-            # Adiciona os novos estados gerados na memoria
-            memoria.extend(sucessores)
+            print(f'Escolhido: {atual}')
 
             print(f'> Estados sucessores: {len(sucessores)}')
