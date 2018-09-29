@@ -6,6 +6,7 @@ from problema import Problema
 
 class BuscaGulosa(object):
 
+    # TODO: adaptar busca em largura do professor para busca gulosa e A*
     def busca_gulosa(self, problema: Problema):
         """Agente que implementa a busca em gulosa:
 
@@ -53,11 +54,11 @@ class BuscaGulosa(object):
             for x in sucessores:
                 print(x)
             #
-            print('*-*'*80)
-            print('memoria:')
-            for x in memoria:
-                print(x)
-            print()
+            #print('*-*'*80)
+            #print('memoria:')
+            #for x in memoria:
+            #    print(x)
+            #print()
 
             # print('-' * 80)
             # print('borda DEPOIS:')

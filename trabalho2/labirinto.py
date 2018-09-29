@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 from problema import Problema
+import pandas as pd
 
 # Constantes para a resolução do labirinto
 
@@ -18,8 +19,6 @@ class Labirinto(Problema):
             labirinto = file.readlines()
             file.close()
 
-            print(labirinto)
-
             self.linha = 0
             self.coluna = 0
             self.bloco = ''
@@ -33,16 +32,18 @@ class Labirinto(Problema):
 
         def copy(self):
             estado = Labirinto.Estado()
-            estado.linha = self.linha # .copy()
-            estado.coluna = self.coluna # .copy()
-            estado.bloco = self.coluna # .copy()
+            estado.linha = self.linha#.copy()
+            estado.coluna = self.coluna#.copy()
+            estado.bloco = self.coluna#.copy()
             estado.labirinto = self.labirinto
 
             return estado
 
         def __repr__(self):
-            #self.labirinto[self.linha][self.coluna] = 'X'
-            return f'{self.labirinto}'
+            #teste = pd.DataFrame(self.labirinto)
+            #return f'{teste}'
+
+            return f'[{self.linha}][{self.coluna}] - {self.bloco}'
 
         def __eq__(self, other):
             return self.linha == other.linha and self.coluna == other.coluna
@@ -169,9 +170,9 @@ class Labirinto(Problema):
         sucessores = []
 
         a1 = self.__go_left(estado, estado.labirinto, 'LEFT')
-        a2 = self.__go_left(estado, estado.labirinto, 'LEFT')
-        a3 = self.__go_left(estado, estado.labirinto, 'LEFT')
-        a4 = self.__go_left(estado, estado.labirinto, 'LEFT')
+        a2 = self.__go_right(estado, estado.labirinto, 'LEFT')
+        a3 = self.__go_up(estado, estado.labirinto, 'LEFT')
+        a4 = self.__go_down(estado, estado.labirinto, 'LEFT')
 
         # Cria uma lista apenas com os estados validos
         if a1: sucessores.append(a1)
