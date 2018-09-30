@@ -49,7 +49,12 @@ class BuscaGulosa(object):
             if atual == aux:
                 atual = atual.pai
 
-            print('-'*80)
+                # Caso tenha voltado até a raiz, não encontrou a solução
+                if atual is None:
+                    print('Solucao não encontrada.')
+                    return None
+
+            # print('-'*80)
             print('Sucessores:')
 
             for x in sucessores:

@@ -8,11 +8,10 @@ arquivo = 'maze01.txt'
 
 
 class Labirinto(Problema):
-
     """Definicao do problema do labirinto."""
 
+    # Modelagem de um estado do problema
     class Estado(object):
-        """Modelagem de um estado do problema."""
 
         def __init__(self):
             file = open(arquivo, 'r')

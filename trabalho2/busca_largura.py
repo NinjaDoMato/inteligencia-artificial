@@ -7,7 +7,6 @@ from problema import Problema
 
 class BuscaLargura(object):
 
-# TODO: adaptar busca em largura do professor para busca gulosa e A*
     def busca_em_largura(self, problema: Problema):
         """Agente que implementa a busca em largura:
 
