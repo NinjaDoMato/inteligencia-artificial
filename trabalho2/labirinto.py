@@ -77,7 +77,7 @@ class Labirinto(Problema):
         solucao_final.append(estado)
 
         # Retorna a solucao
-        return solucao_final.reverse()
+        return solucao_final#.reverse()
 
     def funcao_objetivo(self, estado):
         """Verifica se a funcao atingiu o seu objetivo."""

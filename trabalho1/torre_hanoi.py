@@ -44,7 +44,8 @@ class ProblemaTorreHanoi(Problema):
             solucao_final.append(estado)
             estado = estado.pai
         solucao_final.append(estado)
-        return solucao_final.reverse()
+
+        return solucao_final#.reverse()
 
     def __mover(self, estado_pai, acao):
         

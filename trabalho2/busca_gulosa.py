@@ -24,15 +24,15 @@ class BuscaGulosa(object):
 
         while True:
 
-            print(f'=' * 80)
-            print(f'> Estado sendo avaliado:')
-            print(f'{atual}')
+            #print(f'=' * 80)
+            #print(f'> Estado sendo avaliado:')
+            #print(f'{atual}')
 
             # Verifica se achou a solucao objetivo
             if problema.funcao_objetivo(atual):
                 print('Solucao encontrada.')
-                return problema.solucao(atual)
-
+                #return problema.solucao(atual)
+                return atual
             # Geracao dos estados sucessores
             sucessores = problema.funcao_sucessora(atual)
 
@@ -55,10 +55,10 @@ class BuscaGulosa(object):
                     return None
 
             # print('-'*80)
-            print('Sucessores:')
+            #print('Sucessores:')
 
-            for x in sucessores:
-                print(x)
+            #for x in sucessores:
+            #    print(x)
 
-            print(f'Escolhido: {atual}')
-            print(f'> Estados sucessores: {len(sucessores)}')
+            #print(f'Escolhido: {atual}')
+            #print(f'> Estados sucessores: {len(sucessores)}')

@@ -15,7 +15,7 @@ def main():
     busca = BuscaGulosa()
     solucao = busca.busca_gulosa(problema)
 
-    pprint(solucao)
+    pprint(problema.solucao(solucao))
 
 
 if __name__ == '__main__':
