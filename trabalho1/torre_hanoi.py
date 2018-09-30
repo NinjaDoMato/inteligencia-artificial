@@ -2,117 +2,98 @@
 
 from problema import Problema
 
-class TorreHanoi(Problema):
 
-    torreA = []
-    torreB = []
-    torreC = []
-
+class ProblemaTorreHanoi(Problema):
+    
     class Estado(object):
-
         def __init__(self):
-            self.torreA = []
-            self.torreB = []
-            self.torreC = []
+            self.torre_a = []
+            self.torre_b = []
+            self.torre_c = []
             self.pai = None
             self.custo = 0
             self.acao = ''
 
         def copy(self):
             estado = ProblemaTorreHanoi.Estado()
-            estado.torreA = self.torreA.copy()
-            estado.torreB = self.torreB.copy()
-            estado.torreC = self.torreC.copy()
-
+            estado.torre_a = self.torre_a.copy()
+            estado.torre_b = self.torre_b.copy()
+            estado.torre_c = self.torre_c.copy()
             return estado
 
         def __repr__(self):
-            return f'{self.torreA} \n {self.torreB} \n {self.torreC}'
+            return f'Torre A: {self.torre_a}\nTorre B: {self.torre_b}\nTorre C: {self.torre_c}\n'
+
+        def __eq__(self, estado):
+            return self.torre_a == estado.torre_a and self.torre_b == estado.torre_b and self.torre_c == estado.torre_c
 
     @property
     def estado_inicial(self):
         estado = ProblemaTorreHanoi.Estado()
-        estado.torreA = [5, 4, 3, 2, 1]
-        estado.torreB = []
-        estado.torreC = []
+        estado.torre_a = [5, 4, 3, 2, 1]
+        estado.torre_b = []
+        estado.torre_c = []
         estado.pai = None
-
         return estado
 
-    def solucao(self):
-        solucao_final = []
+    def funcao_objetivo(self, estado):
+        return estado.torre_c == [5, 4, 3, 2, 1]
 
+    def solucao(self, estado):
+        solucao_final = []
         while estado.pai is not None:
             solucao_final.append(estado)
             estado = estado.pai
-
         solucao_final.append(estado)
-
         return solucao_final.reverse()
 
-    def funcao_objetivo(self, estado):
-        return estado.torreC == [5, 4, 3, 2, 1]
-
-    def __mover_(self, estado_pai, acao):
-
+    def __mover(self, estado_pai, acao):
+        
         estado = estado_pai.copy()
         estado.acao = acao
-
-        tamanhoA = len(estado.torreA)
-        tamanhoB = len(estado.torreB)
-        tamanhoC = len(estado.torreC)
-
-        if acao == 'AB' and (tamanhoB == 0 or (estado.torreA[tamanhoA - 1] < estado.torreB[tamanhoB - 1])):
-            estado.torreB.append(estado.torreA.pop(-1))
-
-        elif acao == 'AC' and (tamanhoC == 0 or (estado.trreA[tamanhoA - 1] < estado.torreC[tamanhoC - 1])):
-            estado.torreC.append(estado.torreA.pop(-1))
-
-        elif acao == 'BA' and (tamanhoA == 0 or (estado.torreB[tamanhoB - 1] < estado.torreA[tamanhoA - 1])):
-            estado.torreA.append(estado.torreB.pop(-1))
-
-        elif acao == 'BC' and (tamanhoC == 0 or (estado.torreB[tamanhoB - 1] < estado.torreC[tamanhoC - 1])):
-            estado.torreC.append(estado.torreB.pop(-1))
-
-        elif acao == 'CA' and (tamanhoA == 0 or (estado.torreC[tamanhoC - 1] < estado.torreA[tamanhoA - 1])):
-            estado.torreA.append(estado.torreC.pop(-1))
-
-        elif acao == 'CB' and (tamanhoB == 0 or (estado.torreC[tamanhoC - 1] < estado.torreB[tamanhoB - 1])):
-            estado.torreB.append(estado.torreC.pop(-1))
-
+        
+        tamanhoA = len(estado.torre_a)
+        tamanhoB = len(estado.torre_b)
+        tamanhoC = len(estado.torre_c)
+        
+        if acao == 'AB' and tamanhoA > 0 and (tamanhoB == 0 or estado.torre_a[tamanhoA - 1] < estado.torre_b[tamanhoB - 1]):
+            estado.torre_b.append(estado.torre_a.pop(-1))
+        
+        elif acao == 'AC' and tamanhoA > 0 and (tamanhoC == 0 or estado.torre_a[tamanhoA - 1] < estado.torre_c[tamanhoC - 1]):
+            estado.torre_c.append(estado.torre_a.pop(-1))
+        
+        elif acao == 'BA' and tamanhoB > 0 and (tamanhoA == 0 or estado.torre_b[tamanhoB - 1] < estado.torre_a[tamanhoA - 1]):
+            estado.torre_a.append(estado.torre_b.pop(-1))
+        
+        elif acao == 'BC' and tamanhoB > 0 and (tamanhoC == 0 or estado.torre_b[tamanhoB - 1] < estado.torre_c[tamanhoC - 1]):
+            estado.torre_c.append(estado.torre_b.pop(-1))
+        
+        elif acao == 'CA' and tamanhoC > 0 and (tamanhoA == 0 or estado.torre_c[tamanhoC - 1] < estado.torre_a[tamanhoA - 1]):
+            estado.torre_a.append(estado.torre_c.pop(-1))
+        
+        elif acao == 'CB' and tamanhoC > 0 and (tamanhoB == 0 or estado.torre_c[tamanhoC - 1] < estado.torre_b[tamanhoB - 1]):
+            estado.torre_b.append(estado.torre_c.pop(-1))
+        
         else:
             return None
-
+            
         estado.pai = estado_pai
+        
         return estado
-
-    def __valida_restricoes(self, estado):
-        print(estado)
-        print(estado.torreA)
-        print(estado.torreB)
-        print(estado.torreC)
 
     def funcao_sucessora(self, estado):
         sucessores = []
+        a1 = self.__mover(estado, 'AB')
+        a2 = self.__mover(estado, 'AC')
+        a3 = self.__mover(estado, 'BA')
+        a4 = self.__mover(estado, 'BC')
+        a5 = self.__mover(estado, 'CA')
+        a6 = self.__mover(estado, 'CB')
 
-        ac1 = self.__mover(estado, 'AB')
-        ac2 = self.__mover(estado, 'AC')
-        ac3 = self.__mover(estado, 'BA')
-        ac4 = self.__mover(estado, 'BC')
-        ac5 = self.__mover(estado, 'CA')
-        ac6 = self.__mover(estado, 'CB')
-
-        if ac1:
-            sucessores.append(a1)
-        if ac2:
-            sucessores.append(a2)
-        if ac3:
-            sucessores.append(a3)
-        if ac4:
-            sucessores.append(a4)
-        if ac5:
-            sucessores.append(a5)
-        if ac6:
-            sucessores.append(a6)
-
+        if a1: sucessores.append(a1)
+        if a2: sucessores.append(a2)
+        if a3: sucessores.append(a3)
+        if a4: sucessores.append(a4)
+        if a5: sucessores.append(a5)
+        
         return sucessores
