@@ -4,13 +4,9 @@
     <list default="true" id="400e3ef6-7284-4e3e-bfb5-ff3a7fcdbd46" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../estudo-dirigido/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../estudo-dirigido/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../trabalho1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../trabalho1/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../trabalho1/busca_profundidade.py" beforeDir="false" afterPath="$PROJECT_DIR$/../trabalho1/busca_profundidade.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../trabalho1/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/../trabalho1/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../trabalho1/torre_hanoi.py" beforeDir="false" afterPath="$PROJECT_DIR$/../trabalho1/torre_hanoi.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/busca_gulosa.py" beforeDir="false" afterPath="$PROJECT_DIR$/busca_gulosa.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/busca_largura.py" beforeDir="false" afterPath="$PROJECT_DIR$/busca_largura.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/labirinto.py" beforeDir="false" afterPath="$PROJECT_DIR$/labirinto.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -62,25 +58,47 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="756" />
+          <entry key="py" value="778" />
           <entry key="txt" value="42" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="42" />
-          <entry key="Python" value="756" />
+          <entry key="Python" value="778" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="py" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="Python" value="1" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/busca_largura.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="72">
+              <caret line="41" selection-start-line="41" selection-end-line="41" />
+              <folding>
+                <element signature="e#22#47#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="42" lean-forward="true" selection-start-line="15" selection-start-column="42" selection-end-line="15" selection-end-column="42" />
+            <state relative-caret-position="242">
+              <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
               <folding>
                 <element signature="e#23#48#0" expanded="true" />
               </folding>
@@ -88,11 +106,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/busca_gulosa.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6">
-              <caret line="32" selection-start-line="32" selection-end-line="32" />
+            <state relative-caret-position="293">
+              <caret line="64" lean-forward="true" selection-start-line="64" selection-end-line="64" />
               <folding>
                 <element signature="e#22#47#0" expanded="true" />
               </folding>
@@ -103,11 +121,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/labirinto.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="79" column="19" lean-forward="true" selection-start-line="79" selection-start-column="19" selection-end-line="79" selection-end-column="19" />
+            <state relative-caret-position="102">
+              <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
               <folding>
                 <element signature="e#22#51#0" expanded="true" />
-                <marker date="1538338683896" expanded="true" signature="1185:1198" ph="..." />
+                <marker date="1538339421178" expanded="true" signature="1185:1198" ph="..." />
               </folding>
             </state>
           </provider>
@@ -155,11 +173,11 @@
       <list>
         <option value="$PROJECT_DIR$/maze02.txt" />
         <option value="$PROJECT_DIR$/treste.py" />
-        <option value="$PROJECT_DIR$/busca_largura.py" />
         <option value="$PROJECT_DIR$/maze01.txt" />
         <option value="$PROJECT_DIR$/main.py" />
-        <option value="$PROJECT_DIR$/busca_gulosa.py" />
+        <option value="$PROJECT_DIR$/busca_largura.py" />
         <option value="$PROJECT_DIR$/labirinto.py" />
+        <option value="$PROJECT_DIR$/busca_gulosa.py" />
       </list>
     </option>
   </component>
@@ -304,7 +322,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.12946428" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -353,19 +370,22 @@
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/treste.py" />
-    <entry file="file://$PROJECT_DIR$/maze02.txt">
+    <entry file="file://$PROJECT_DIR$/busca_largura.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="41" lean-forward="true" selection-start-line="4" selection-start-column="41" selection-end-line="4" selection-end-column="41" />
+        <state relative-caret-position="72">
+          <caret line="41" selection-start-line="41" selection-end-line="41" />
+          <folding>
+            <element signature="e#22#47#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/busca_largura.py">
+    <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="113">
-          <caret line="28" column="25" lean-forward="true" selection-start-line="28" selection-start-column="25" selection-end-line="28" selection-end-column="25" />
+        <state relative-caret-position="242">
+          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
           <folding>
-            <element signature="e#22#47#0" expanded="true" />
+            <element signature="e#23#48#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -379,31 +399,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/labirinto.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="79" column="19" lean-forward="true" selection-start-line="79" selection-start-column="19" selection-end-line="79" selection-end-column="19" />
+        <state relative-caret-position="102">
+          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
           <folding>
             <element signature="e#22#51#0" expanded="true" />
-            <marker date="1538338683896" expanded="true" signature="1185:1198" ph="..." />
+            <marker date="1538339421178" expanded="true" signature="1185:1198" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/maze02.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="41" lean-forward="true" selection-start-line="4" selection-start-column="41" selection-end-line="4" selection-end-column="41" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/busca_gulosa.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6">
-          <caret line="32" selection-start-line="32" selection-end-line="32" />
+        <state relative-caret-position="293">
+          <caret line="64" lean-forward="true" selection-start-line="64" selection-end-line="64" />
           <folding>
             <element signature="e#22#47#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="42" lean-forward="true" selection-start-line="15" selection-start-column="42" selection-end-line="15" selection-end-column="42" />
-          <folding>
-            <element signature="e#23#48#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -37,7 +37,8 @@ class BuscaLargura(object):
             # 4. Verifica se achou a solucao objetivo
             if problema.funcao_objetivo(estado):
                 print('Solucao encontrada.')
-                return problema.solucao(estado)
+                #return problema.solucao(estado)
+                return estado
 
             # 5. Geracao dos estados sucessores
             # ** Na busca em largura, os estados sucessores sao adicionados

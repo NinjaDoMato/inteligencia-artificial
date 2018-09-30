@@ -4,7 +4,7 @@ import pandas as pd
 
 # Constantes para a resolução do labirinto
 
-arquivo = 'maze01.txt'
+arquivo = 'maze02.txt'
 
 
 class Labirinto(Problema):

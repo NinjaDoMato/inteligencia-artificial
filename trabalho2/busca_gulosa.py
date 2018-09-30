@@ -24,9 +24,9 @@ class BuscaGulosa(object):
 
         while True:
 
-            #print(f'=' * 80)
-            #print(f'> Estado sendo avaliado:')
-            #print(f'{atual}')
+            print(f'=' * 80)
+            print(f'> Estado sendo avaliado:')
+            print(f'{atual}')
 
             # Verifica se achou a solucao objetivo
             if problema.funcao_objetivo(atual):

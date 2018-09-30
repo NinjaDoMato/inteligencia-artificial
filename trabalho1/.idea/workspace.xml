@@ -3,14 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="20cb3e88-b03d-4fbc-aff6-ea3a467b2c41" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../estudo-dirigido/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../estudo-dirigido/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/busca_profundidade.py" beforeDir="false" afterPath="$PROJECT_DIR$/busca_profundidade.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/torre_hanoi.py" beforeDir="false" afterPath="$PROJECT_DIR$/torre_hanoi.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../trabalho2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../trabalho2/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../trabalho2/busca_gulosa.py" beforeDir="false" afterPath="$PROJECT_DIR$/../trabalho2/busca_gulosa.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../trabalho2/busca_largura.py" beforeDir="false" afterPath="$PROJECT_DIR$/../trabalho2/busca_largura.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../trabalho2/labirinto.py" beforeDir="false" afterPath="$PROJECT_DIR$/../trabalho2/labirinto.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../trabalho2/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/../trabalho2/main.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -234,7 +230,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1592262" />
