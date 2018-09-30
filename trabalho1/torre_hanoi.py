@@ -11,7 +11,6 @@ class ProblemaTorreHanoi(Problema):
             self.torre_b = []
             self.torre_c = []
             self.pai = None
-            self.custo = 0
             self.acao = ''
 
         def copy(self):
@@ -58,27 +57,31 @@ class ProblemaTorreHanoi(Problema):
         
         if acao == 'AB' and tamanhoA > 0 and (tamanhoB == 0 or estado.torre_a[tamanhoA - 1] < estado.torre_b[tamanhoB - 1]):
             estado.torre_b.append(estado.torre_a.pop(-1))
-        
+            estado.pai = estado_pai
+
         elif acao == 'AC' and tamanhoA > 0 and (tamanhoC == 0 or estado.torre_a[tamanhoA - 1] < estado.torre_c[tamanhoC - 1]):
             estado.torre_c.append(estado.torre_a.pop(-1))
-        
+            estado.pai = estado_pai
+
         elif acao == 'BA' and tamanhoB > 0 and (tamanhoA == 0 or estado.torre_b[tamanhoB - 1] < estado.torre_a[tamanhoA - 1]):
             estado.torre_a.append(estado.torre_b.pop(-1))
-        
+            estado.pai = estado_pai
+
         elif acao == 'BC' and tamanhoB > 0 and (tamanhoC == 0 or estado.torre_b[tamanhoB - 1] < estado.torre_c[tamanhoC - 1]):
             estado.torre_c.append(estado.torre_b.pop(-1))
-        
+            estado.pai = estado_pai
+
         elif acao == 'CA' and tamanhoC > 0 and (tamanhoA == 0 or estado.torre_c[tamanhoC - 1] < estado.torre_a[tamanhoA - 1]):
             estado.torre_a.append(estado.torre_c.pop(-1))
-        
+            estado.pai = estado_pai
+
         elif acao == 'CB' and tamanhoC > 0 and (tamanhoB == 0 or estado.torre_c[tamanhoC - 1] < estado.torre_b[tamanhoB - 1]):
             estado.torre_b.append(estado.torre_c.pop(-1))
-        
+            estado.pai = estado_pai
+
         else:
             return None
-            
-        estado.pai = estado_pai
-        
+
         return estado
 
     def funcao_sucessora(self, estado):

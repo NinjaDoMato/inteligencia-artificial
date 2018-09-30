@@ -33,7 +33,7 @@ class Labirinto(Problema):
             estado = Labirinto.Estado()
             estado.linha = self.linha#.copy()
             estado.coluna = self.coluna#.copy()
-            estado.bloco = self.coluna#.copy()
+            estado.bloco = self.labirinto[self.linha][self.coluna]#.copy()
             estado.labirinto = self.labirinto
             estado.acao = self.acao
 
@@ -43,14 +43,13 @@ class Labirinto(Problema):
             return estado
 
         def __repr__(self):
-            return f'[{self.linha}][{self.coluna}] - {self.acao}'
+            return f'[{self.linha}][{self.coluna}] - {self.acao} [{self.bloco}]'
 
         def __eq__(self, other):
             return self.linha == other.linha and self.coluna == other.coluna
 
         def __gt__(self, other):
-            return (self.linha > other.linha) or \
-                   (self.coluna > other.coluna)
+            return ((self.linha >= other.linha) or (self.coluna >= other.coluna))
 
     @property
     def estado_inicial(self):
@@ -63,6 +62,7 @@ class Labirinto(Problema):
 
         return estado
 
+    # TODO: verificar problema na exibição da solucação
     def solucao(self, estado):
         """Gera uma lista com a solucao de um problema a partir de um estado."""
 
@@ -78,7 +78,6 @@ class Labirinto(Problema):
 
         # Retorna a solucao
         return solucao_final.reverse()
-
 
     def funcao_objetivo(self, estado):
         """Verifica se a funcao atingiu o seu objetivo."""

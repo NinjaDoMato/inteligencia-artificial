@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 
+
 class HillClimbing(object):
 
     def __init__(self, max_alt, max_sem_alt):

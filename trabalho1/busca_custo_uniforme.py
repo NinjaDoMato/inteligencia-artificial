@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 
-from torre_hanoi import TorreHanoi
+from torre_hanoi import ProblemaTorreHanoi
 
 
 class BuscaCustoUniforme():
