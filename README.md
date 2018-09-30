@@ -3,6 +3,14 @@
 Trabalhos desenvolvidos para a disciplina de Inteligência Artificial do curso
 de Bacharelado em Ciência da Computação da Universidade Tuiuti do Paraná.
 
+## Autor
+
+- Aluno: Daniel Deda
+
+## Descrição
+
+Trabalhos referentes aos algoritmos de busca.
+
 Trabalho 1
   - Implementada a Busca em Largura e Em Profundadade para solução do problema da torre de Hanói
   
@@ -18,12 +26,3 @@ Considerações:
     - A função "solução" estava retornando None quando a lista de estados era invertida, então as funções de busca retornam 
       apenas o estado final e na função main é exibida a lista de estados até a solução final
     - Prints para testes foram comentados no cógigo
-  
-
-## Autor
-
-- Aluno: Daniel Deda
-
-## Descrição
-
-Trabalhos referentes aos algoritmos de busca.
