@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="400e3ef6-7284-4e3e-bfb5-ff3a7fcdbd46" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../estudo-dirigido/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../estudo-dirigido/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../trabalho1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../trabalho1/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/busca_gulosa.py" beforeDir="false" afterPath="$PROJECT_DIR$/busca_gulosa.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/busca_largura.py" beforeDir="false" afterPath="$PROJECT_DIR$/busca_largura.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/labirinto.py" beforeDir="false" afterPath="$PROJECT_DIR$/labirinto.py" afterDir="false" />
-    </list>
+    <list default="true" id="400e3ef6-7284-4e3e-bfb5-ff3a7fcdbd46" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,10 +76,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/busca_largura.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
+            <state relative-caret-position="-17">
               <caret line="41" selection-start-line="41" selection-end-line="41" />
               <folding>
                 <element signature="e#22#47#0" expanded="true" />
@@ -97,7 +91,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="242">
+            <state relative-caret-position="323">
               <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
               <folding>
                 <element signature="e#23#48#0" expanded="true" />
@@ -106,10 +100,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/busca_gulosa.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="293">
+            <state relative-caret-position="1088">
               <caret line="64" lean-forward="true" selection-start-line="64" selection-end-line="64" />
               <folding>
                 <element signature="e#22#47#0" expanded="true" />
@@ -322,6 +316,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.12946428" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -370,26 +365,6 @@
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/treste.py" />
-    <entry file="file://$PROJECT_DIR$/busca_largura.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="41" selection-start-line="41" selection-end-line="41" />
-          <folding>
-            <element signature="e#22#47#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
-          <folding>
-            <element signature="e#23#48#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/maze01.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -417,8 +392,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/busca_gulosa.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
+        <state relative-caret-position="1088">
           <caret line="64" lean-forward="true" selection-start-line="64" selection-end-line="64" />
+          <folding>
+            <element signature="e#22#47#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+          <folding>
+            <element signature="e#23#48#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/busca_largura.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-17">
+          <caret line="41" selection-start-line="41" selection-end-line="41" />
           <folding>
             <element signature="e#22#47#0" expanded="true" />
           </folding>

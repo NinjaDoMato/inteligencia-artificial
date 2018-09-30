@@ -12,11 +12,11 @@ def main():
 
     #p = ProblemaRainha()
 
-    hc = HillClimbing(max_alt=100, max_sem_alt=10)
-    hc.executa(p)
+    #hc = HillClimbing(max_alt=100, max_sem_alt=10)
+    #hc.executa(p)
 
-    #tb = TabuSearch(max_alt=90000, max_sem_alt=10)
-    #tb.executa(p)
+    tb = TabuSearch(max_alt=1000, max_sem_alt=10)
+    tb.executa(p)
 
 if __name__ == '__main__':
     main()
