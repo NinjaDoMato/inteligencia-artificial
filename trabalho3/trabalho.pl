@@ -215,7 +215,7 @@ intercaladas([X|R1], [Y|R2], [X,Y|R3]):-
 % Exercicio 3 - Inserção ordenada
 
 insercao_ord(N,[],[N]).
-insercao_ord(N,[X|R],L):-
+insercao_ord(N,[X|R],[X|L]):-
 	N >= X,
 	insercao_ord(N,R,L).
 insercao_ord(N,[X|R],[N,X|R]):-
