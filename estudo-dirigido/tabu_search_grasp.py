@@ -16,13 +16,13 @@ class TabuSearchGrasp(object):
 
         while i < self.max_alt or j < self.max_sem_alt:
 
+            aleaorio = problema.estado_inicial
+            custo_aleatorio = problema.funcao_objetivo(aleaorio)
+
             custo_atual = problema.funcao_objetivo(atual)
 
-            aleaorio = problema.estado_inicial
-            custo_aleatorio = problema.funcao_sucessora(aleaorio)
-
             if custo_aleatorio < custo_atual and not visitados.__contains__(custo_aleatorio):
-                print(f'achou melhor aleatório! atual = {custo_atual}  vizinho {custo_aleatorio}')
+                print(f'achou melhor aleatório! atual = {custo_atual}  aleatório {custo_aleatorio}')
                 atual = aleaorio
 
             print(f"{i:03d} - {atual} - {problema.funcao_objetivo(atual)}")

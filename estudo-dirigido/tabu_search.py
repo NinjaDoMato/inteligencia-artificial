@@ -25,6 +25,7 @@ class TabuSearch(object):
 
                 print(f'achou melhor! atual = {custo_atual}  vizinho {custo_vizinho}')
                 atual = vizinho
+                visitados.append(atual)
 
                 j = 0
 
