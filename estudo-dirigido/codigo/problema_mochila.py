@@ -64,7 +64,6 @@ class ProblemaMochila(object):
         estado_suc = estado.copy()
 
         """escolhe  um item aleatório da prateleira e adiciona a mochila"""
-
         index = randint(0, len(estado_suc.prateleira) - 1)
 
         item = estado_suc.prateleira[index]
