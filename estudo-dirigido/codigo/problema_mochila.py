@@ -20,7 +20,12 @@ class ProblemaMochila(object):
                 [10, 100],
                 [10, 100],
                 [12, 120],
+                [12, 120],
+                [12, 120],
+                [12, 120],
                 [14, 110],
+                [20, 90],
+                [20, 90],
                 [20, 90],
                 [15, 30]
             ]
@@ -34,12 +39,14 @@ class ProblemaMochila(object):
             estado = ProblemaMochila.Estado()
 
             estado.mochila = self.mochila.copy()
-            estado.prateleira = self.mochila.copy()
+            estado.prateleira = self.prateleira.copy()
             estado.carga_atual = self.carga_atual
             estado.capacidade = self.capacidade
             estado.valor_acumulado = self.valor_acumulado
             return estado
 
+        def __repr__(self):
+            return f'Mochila: {self.mochila}\nPrateleira: {self.prateleira}\nValor Acumulado: {self.valor_acumulado}\nCarga Atual: {self.carga_atual}\n'
 
     @property
     def estado_inicial(self):
@@ -56,16 +63,15 @@ class ProblemaMochila(object):
         """Gera o estado vizinho"""
         estado_suc = estado.copy()
 
-        #while estado_suc.carga_atual < estado_suc.capacidade:
-
         """escolhe  um item aleatório da prateleira e adiciona a mochila"""
 
-        índice = random.randrange(len(estado_suc.prateleira))
-        item = estado_suc.prateleira[índice]
+        index = randint(0, len(estado_suc.prateleira) - 1)
 
-        if item[0] < estado_suc.carga_atual - estado_suc.capacide:
+        item = estado_suc.prateleira[index]
+
+        if item[0] < estado_suc.capacidade - estado_suc.carga_atual:
             estado_suc.mochila.append(item)
-            estado_suc.mochila.remove(item)
+            estado_suc.prateleira.remove(item)
 
             estado_suc.carga_atual = estado_suc.carga_atual + item[0]
             estado_suc.valor_acumulado = estado_suc.valor_acumulado + item[1]

@@ -21,7 +21,7 @@ class TabuSearchGrasp(object):
 
             custo_atual = problema.funcao_objetivo(atual)
 
-            if custo_aleatorio < custo_atual and not visitados.__contains__(custo_aleatorio):
+            if custo_aleatorio > custo_atual and not visitados.__contains__(custo_aleatorio):
                 print(f'achou melhor aleatório! atual = {custo_atual}  aleatório {custo_aleatorio}')
                 atual = aleaorio
 
@@ -30,7 +30,10 @@ class TabuSearchGrasp(object):
             vizinho = problema.funcao_sucessora(atual)
             custo_vizinho = problema.funcao_objetivo(vizinho)
 
-            if custo_vizinho < custo_atual and not visitados.__contains__(custo_vizinho):
+            #if custo_vizinho < custo_atual and not visitados.__contains__(custo_vizinho):
+
+            #custo maior = mais valor na mochila"""
+            if custo_vizinho > custo_atual and not visitados.__contains__(custo_vizinho):
 
                 print(f'achou melhor! atual = {custo_atual}  vizinho {custo_vizinho}')
                 atual = vizinho

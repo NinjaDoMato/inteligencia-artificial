@@ -14,17 +14,14 @@ def main():
 
     pm = ProblemaMochila()
 
-    hc = HillClimbing(max_alt=1000, max_sem_alt=10)
-    hc.executa(pm)
+    #hc = HillClimbing(max_alt=100, max_sem_alt=10)
+    #hc.executa(pm)
 
-    ###tb = TabuSearch(max_alt=1000, max_sem_alt=10)
-    ###tb.executa(p)
+    tb = TabuSearch(max_alt=1000, max_sem_alt=10)
+    tb.executa(pm)
 
-    ##tbg = TabuSearchGrasp(max_alt=1000, max_sem_alt=10)
-    ##tbg.executa(p)
-#
-    #tbg = TabuSearchGrasp(max_alt=1000, max_sem_alt=10)
-    #tbg.executa(p)
+    #tbg = TabuSearchGrasp(max_alt=100, max_sem_alt=10)
+    #tbg.executa(pm)
 
 if __name__ == '__main__':
     main()

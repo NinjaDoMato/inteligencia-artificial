@@ -21,7 +21,7 @@ class TabuSearch(object):
             custo_atual = problema.funcao_objetivo(atual)
             custo_vizinho = problema.funcao_objetivo(vizinho)
 
-            if custo_vizinho < custo_atual and not visitados.__contains__(custo_vizinho):
+            if custo_vizinho > custo_atual and not visitados.__contains__(custo_vizinho):
 
                 print(f'achou melhor! atual = {custo_atual}  vizinho {custo_vizinho}')
                 atual = vizinho
