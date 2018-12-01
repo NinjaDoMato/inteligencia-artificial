@@ -2,6 +2,7 @@
 import copy
 from random import random, randint
 from problema_rainha import ProblemaRainha
+from problema_mochila import ProblemaMochila
 from problema_raiz import ProblemaRaiz
 from hill_climbing import HillClimbing
 from tabu_search import TabuSearch
@@ -14,16 +15,16 @@ def main():
     pm = ProblemaMochila()
 
     hc = HillClimbing(max_alt=1000, max_sem_alt=10)
-    hc.executa(p)
+    hc.executa(pm)
 
-    tb = TabuSearch(max_alt=1000, max_sem_alt=10)
-    tb.executa(p)
+    ###tb = TabuSearch(max_alt=1000, max_sem_alt=10)
+    ###tb.executa(p)
 
-    tbg = TabuSearchGrasp(max_alt=1000, max_sem_alt=10)
-    tbg.executa(p)
-
-    tbg = TabuSearchGrasp(max_alt=1000, max_sem_alt=10)
-    tbg.executa(p)
+    ##tbg = TabuSearchGrasp(max_alt=1000, max_sem_alt=10)
+    ##tbg.executa(p)
+#
+    #tbg = TabuSearchGrasp(max_alt=1000, max_sem_alt=10)
+    #tbg.executa(p)
 
 if __name__ == '__main__':
     main()

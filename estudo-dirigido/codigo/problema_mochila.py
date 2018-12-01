@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 import copy
 from pprint import pprint
+import random
 from random import random, randint
 
 class ProblemaMochila(object):
@@ -12,7 +13,7 @@ class ProblemaMochila(object):
         def __init__(self):
             """Para este problema, começa com a mochila vazia."""
 
-            """Peso - Valor"""
+            """Peso, Valor"""
             self.prateleira = [
                 [5, 20],
                 [5, 20],
@@ -29,40 +30,44 @@ class ProblemaMochila(object):
             self.capacidade = 100
             self.valor_acumulado = 0
 
+        def copy(self):
+            estado = ProblemaMochila.Estado()
+
+            estado.mochila = self.mochila.copy()
+            estado.prateleira = self.mochila.copy()
+            estado.carga_atual = self.carga_atual
+            estado.capacidade = self.capacidade
+            estado.valor_acumulado = self.valor_acumulado
+            return estado
+
 
     @property
     def estado_inicial(self):
-        """Gera um estado inicial aleatório"""
+        """Gera um estado inicial"""
         estado = ProblemaMochila.Estado()
         return estado
 
     def funcao_objetivo(self, estado):
-        """Avalia o custo do estado atual."""
+        """Avalia o valor dos itens acumulados no estado atual."""
         return estado.carga_atual
 
 
     def funcao_sucessora(self, estado):
         """Gera o estado vizinho"""
+        estado_suc = estado.copy()
 
-        return None;
+        #while estado_suc.carga_atual < estado_suc.capacidade:
 
+        """escolhe  um item aleatório da prateleira e adiciona a mochila"""
 
-    def adiciona_item(self, estado_pai, prateleira):
+        índice = random.randrange(len(estado_suc.prateleira))
+        item = estado_suc.prateleira[índice]
 
-        estado = estado_pai
+        if item[0] < estado_suc.carga_atual - estado_suc.capacide:
+            estado_suc.mochila.append(item)
+            estado_suc.mochila.remove(item)
 
-        """escolhe  um item aleatório"""
-        item = prateleira[randint(0, estado.prateleira.size())]
+            estado_suc.carga_atual = estado_suc.carga_atual + item[0]
+            estado_suc.valor_acumulado = estado_suc.valor_acumulado + item[1]
 
-        if item[0] < estado.carga_atual - estado.capacide:
-
-            estado.mochila.append(item)
-            estado.mochila.remove(item)
-
-            estado.carga_atual = estado.carga_atual + item[0]
-            estado.valor_acumulado = estado.valor_acumulado + item[1]
-
-        return estado
-
-
-
+        return estado_suc
