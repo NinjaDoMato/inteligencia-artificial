@@ -11,44 +11,58 @@ class ProblemaMochila(object):
 
         def __init__(self):
             """Para este problema, começa com a mochila vazia."""
-            self.prateleira = [
-                ["joia", 5, 100],
-                ["bolsa", 10, 100],
-                ["sorvete", 15, 30]
-            ]
-            self.carga_atual = 0
-            self.itens_atuais = []
 
-            self.valor_acumulado = 0
+            """Peso - Valor"""
+            self.prateleira = [
+                [5, 20],
+                [5, 20],
+                [10, 100],
+                [10, 100],
+                [12, 120],
+                [14, 110],
+                [20, 90],
+                [15, 30]
+            ]
+
+            self.mochila = []
+            self.carga_atual = 0
             self.capacidade = 100
+            self.valor_acumulado = 0
+
 
     @property
     def estado_inicial(self):
         """Gera um estado inicial aleatório"""
-
         estado = ProblemaMochila.Estado()
-
-        estado.itens_atuais = [
-            ["bolsa", 10, 100],
-        ]
-        estado.prateleira = [
-                ["joia", 5, 100],
-                ["sorvete", 15, 30]
-            ]
-
-        estado.carga_atual = 10
-        estado.valor_acumulado = 100,
-        estado.capacidade = 90
-
         return estado
 
     def funcao_objetivo(self, estado):
         """Avalia o custo do estado atual."""
+        return estado.carga_atual
 
-
-
-        return None;
 
     def funcao_sucessora(self, estado):
         """Gera o estado vizinho"""
+
         return None;
+
+
+    def adiciona_item(self, estado_pai, prateleira):
+
+        estado = estado_pai
+
+        """escolhe  um item aleatório"""
+        item = prateleira[randint(0, estado.prateleira.size())]
+
+        if item[0] < estado.carga_atual - estado.capacide:
+
+            estado.mochila.append(item)
+            estado.mochila.remove(item)
+
+            estado.carga_atual = estado.carga_atual + item[0]
+            estado.valor_acumulado = estado.valor_acumulado + item[1]
+
+        return estado
+
+
+
